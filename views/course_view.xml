@@ -1,4 +1,46 @@
 <odoo>
+
+    <record model="ir.ui.view" id="course_form_view">
+        <field name="name">openacademy.course</field>
+        <field name="model">openacademy.course</field>
+        <field name="arch" type="xml">
+            <form string="Course form">
+                <group>
+                    <field name="name"/>
+                </group>
+
+                <notebook colspan="4">
+                    <page string="Description">
+                        <field name="description"/>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="course_tree_view">
+        <field name="name">openacademy.course</field>
+        <field name="model">openacademy.course</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="course_search_view">
+        <field name="name">openacademy.course</field>
+        <field name="model">openacademy.course</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="description"/>
+            </search>
+        </field>
+    </record>
+
+
     <record model="ir.actions.act_window" id="course_list_action">
         <field name="name">Courses</field>
         <field name="res_model">openacademy.course</field>

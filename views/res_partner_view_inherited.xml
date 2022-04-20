@@ -26,4 +26,25 @@
         </field>
     </record>
 
+    <record model="ir.actions.act_window" id="contact_list_action">
+        <field name="name">Contacts</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="contact_cat_list_action">
+        <field name="name">Contact Tags</field>
+        <field name="res_model">res.partner.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="configuration_menu" name="Configuration" parent="openacademy.main_openacademy_menu"/>
+
+    <menuitem id="contact_menu" name="Contacts"
+          parent="configuration_menu"
+          action="contact_list_action"/>
+
+    <menuitem id="contact_tags_menu" name="Tags"
+          parent="configuration_menu"
+          action="contact_cat_list_action"/>
 </odoo>

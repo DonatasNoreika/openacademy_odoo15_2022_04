@@ -71,15 +71,7 @@
                 <field name="color" invisible="True"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div
-                                t-attf-class="oe_kanban_global_click_edit oe_semantic_html_override">
-<!--                            <div class="oe_dropdown_kanban">-->
-<!--                                &lt;!&ndash; dropdown menu &ndash;&gt;-->
-<!--                                <div class="oe_dropdown_toggle">-->
-<!--                                    <i class="fa fa-bars fa-lg" title="Manage" aria-label="Manage"/>-->
-<!--                                </div>-->
-<!--                                <div class="oe_clear"></div>-->
-<!--                            </div>-->
+                        <div t-attf-class="oe_kanban_global_click_edit oe_semantic_html_override">
                             <div t-attf-class="oe_kanban_content">
                                 <!-- title -->
                                 Session name:

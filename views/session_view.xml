@@ -1,5 +1,42 @@
 <odoo>
 
+    <record model="ir.ui.view" id="session_form_view">
+        <field name="name">openacademy.session</field>
+        <field name="model">openacademy.session</field>
+        <field name="arch" type="xml">
+            <form string="Session form">
+                <group string="General">
+                    <field name="name"/>
+                    <field name="instructor_id"/>
+                    <field name="course_id"/>
+                </group>
+                <group string="Schedule">
+                    <field name="start_date"/>
+                    <field name="duration"/>
+                    <field name="seats"/>
+                    <field name="taken_seats" widget="progressbar"/>
+                </group>
+                <label for="attendee_ids"/>
+                <field name="attendee_ids"/>
+            </form>
+        </field>
+    </record>
+
+        <record model="ir.ui.view" id="session_tree_view">
+        <field name="name">openacademy.session</field>
+        <field name="model">openacademy.session</field>
+        <field name="arch" type="xml">
+            <tree string="Session tree">
+                    <field name="name"/>
+                    <field name="instructor_id"/>
+                    <field name="course_id"/>
+                    <field name="start_date"/>
+                    <field name="duration"/>
+                    <field name="seats"/>
+                    <field name="taken_seats" widget="progressbar"/>
+            </tree>
+        </field>
+    </record>
 
     <record model="ir.actions.act_window" id="session_list_action">
         <field name="name">Sessions</field>

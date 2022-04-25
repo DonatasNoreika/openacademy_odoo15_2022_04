@@ -14,3 +14,12 @@ class Session(models.Model):
     seats = fields.Integer(string="Number of seats")
     course_id = fields.Many2one('openacademy.course', string="Course", ondelete='set null')
     attendee_ids = fields.Many2many('res.partner', string="Attendees")
+    taken_seats = fields.Float(string="Taken seats (%)", compute='_taken_seats')
+
+
+    def _taken_seats(self):
+        for record in self:
+            if not record.seats:
+                record.taken_seats == 0.0
+            else:
+                record.taken_seats = (len(record.attendee_ids) / record.seats) * 100.0

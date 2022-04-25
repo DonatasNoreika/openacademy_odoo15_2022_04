@@ -17,10 +17,16 @@ class Session(models.Model):
     seats = fields.Integer(string="Number of seats")
     course_id = fields.Many2one('openacademy.course', string="Course", ondelete='set null')
     attendee_ids = fields.Many2many('res.partner', string="Attendees")
+    attendees_count = fields.Integer(
+        string="Attendees count", compute='_get_attendees_count', store=True)
     taken_seats = fields.Float(string="Taken seats (%)", compute='_taken_seats')
     active = fields.Boolean(default=True)
     color = fields.Integer()
 
+    @api.depends('attendee_ids')
+    def _get_attendees_count(self):
+        for r in self:
+            r.attendees_count = len(r.attendee_ids)
 
     @api.depends('seats', 'attendee_ids')
     def _taken_seats(self):

@@ -15,7 +15,7 @@ class Session(models.Model):
     course_id = fields.Many2one('openacademy.course', string="Course", ondelete='set null')
     attendee_ids = fields.Many2many('res.partner', string="Attendees")
     taken_seats = fields.Float(string="Taken seats (%)", compute='_taken_seats')
-
+    active = fields.Boolean(default=True)
 
     def _taken_seats(self):
         for record in self:

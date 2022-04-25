@@ -17,6 +17,8 @@ class Session(models.Model):
     taken_seats = fields.Float(string="Taken seats (%)", compute='_taken_seats')
     active = fields.Boolean(default=True)
 
+
+    @api.depends('seats', 'attendee_ids')
     def _taken_seats(self):
         for record in self:
             if not record.seats:

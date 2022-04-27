@@ -8,15 +8,15 @@ class Session(models.Model):
     _name = "openacademy.session"
     _description = "OpenAcademy Sessions"
 
-    name = fields.Char(string="Name", required=True)
-    instructor_id = fields.Many2one('res.partner', string="Instructor", ondelete="set null", domain=['|', ('instructor', '=', True), ('category_id.name', 'ilike', 'Teacher')])
+    name = fields.Char(string=_("Name"), required=True)
+    instructor_id = fields.Many2one('res.partner', string=_("Instructor"), ondelete="set null", domain=['|', ('instructor', '=', True), ('category_id.name', 'ilike', 'Teacher')])
     start_date = fields.Date(default=fields.Date.today)
-    end_date = fields.Date(string="End Date", store=True,
+    end_date = fields.Date(string=_("End Date"), store=True,
                            compute='_get_end_date', inverse='_set_end_date')
     duration = fields.Float(digits=(6, 2), help="Duration in days")
-    seats = fields.Integer(string="Number of seats")
-    course_id = fields.Many2one('openacademy.course', string="Course", ondelete='set null')
-    attendee_ids = fields.Many2many('res.partner', string="Attendees")
+    seats = fields.Integer(string=_("Number of seats"))
+    course_id = fields.Many2one('openacademy.course', string=_("Course"), ondelete='set null')
+    attendee_ids = fields.Many2many('res.partner', string=_("Attendees"))
     attendees_count = fields.Integer(
         string="Attendees count", compute='_get_attendees_count', store=True)
     taken_seats = fields.Float(string="Taken seats (%)", compute='_taken_seats')

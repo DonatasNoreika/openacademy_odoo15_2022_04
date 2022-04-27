@@ -30,6 +30,7 @@
         'views/session_view.xml',
         'views/res_partner_view_inherited.xml',
         'views/templates.xml',
+        'views/registration_wizard_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

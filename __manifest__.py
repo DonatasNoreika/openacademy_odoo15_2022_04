@@ -31,6 +31,7 @@
         'views/res_partner_view_inherited.xml',
         'views/templates.xml',
         'views/registration_wizard_view.xml',
+        'reports/session_report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

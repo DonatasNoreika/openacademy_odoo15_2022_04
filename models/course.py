@@ -11,6 +11,7 @@ class Course(models.Model):
     description = fields.Text(string=_("Description"))
     responsible_id = fields.Many2one('res.users', string="Responsible", ondelete='set null')
     sessions_ids = fields.One2many('openacademy.session', 'course_id')
+    image = fields.Image("Image", attachment=True)
 
     _sql_constraints = [
         ('name_description_check',

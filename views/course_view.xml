@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
             <form string="Course form">
                 <group>
+                    <field name="image" widget="image"/>
                     <field name="name"/>
                     <field name="responsible_id"/>
                 </group>
@@ -16,13 +17,12 @@
                     </page>
                     <page string="Sessions">
                         <field name="sessions_ids">
-                            <tree>
+                            <tree editable="top">
                                 <field name="name"/>
                                 <field name="instructor_id"/>
                                 <field name="start_date"/>
                                 <field name="duration"/>
                                 <field name="seats"/>
-                                <field name="course_id"/>
                             </tree>
                              <form>
                                  <group>

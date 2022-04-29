@@ -5,6 +5,9 @@
         <field name="model">openacademy.session</field>
         <field name="arch" type="xml">
             <form string="Session form">
+                <header>
+                    <field name="status" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
                 <group string="General">
                     <field name="name"/>
                     <field name="instructor_id"/>
@@ -36,6 +39,7 @@
                     <field name="seats"/>
                     <field name="taken_seats" widget="progressbar"/>
                     <field name="active"/>
+                    <field name="status" widget="statusbar"/>
             </tree>
         </field>
     </record>

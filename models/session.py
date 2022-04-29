@@ -22,6 +22,12 @@ class Session(models.Model):
     taken_seats = fields.Float(string="Taken seats (%)", compute='_taken_seats')
     active = fields.Boolean(default=True)
     color = fields.Integer()
+    status = fields.Selection([
+        ('draft', _("Draft")),
+        ('started', _("Started")),
+        ('done', _("Done")),
+        ('cancelled', _("Cancelled")),
+    ], string=_("Progress"), default='draft', translate=True)
 
     @api.depends('attendee_ids')
     def _get_attendees_count(self):

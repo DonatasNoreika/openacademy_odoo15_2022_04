@@ -7,7 +7,7 @@
             <form string="Session form">
                 <header>
                     <field name="status" widget="statusbar" options="{'clickable': '1'}"/>
-                    <button name="send_session_report" string="Send info to Instructor" type="object" class="oe_highlight" confirm="Send Session info to Instructor?"/>
+<!--                    <button name="send_session_report" string="Send info to Instructor" type="object" class="oe_highlight" confirm="Send Session info to Instructor?"/>-->
                 </header>
                 <group string="General">
                     <field name="name"/>

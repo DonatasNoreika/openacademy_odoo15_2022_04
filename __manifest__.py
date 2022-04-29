@@ -33,7 +33,7 @@
         'views/registration_wizard_view.xml',
         'reports/session_report.xml',
         'views/session_dash.xml',
-        'mail_templates.xml',
+        # 'mail_templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

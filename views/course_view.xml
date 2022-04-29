@@ -35,6 +35,23 @@
                             </form>
                         </field>
                     </page>
+                    <page string="Documents">
+                        <group>
+                            <field name="document_ids" widget="one2many">
+                                <tree quick_create="true" editable="bottom">
+                                    <field name="name" invisible="1"/>
+                                    <field name="file" filename="name" widget="binary"/>
+                                    <field name="comment"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="file" filename="name"/>
+                                        <field name="comment"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </group>
+                    </page>
                 </notebook>
             </form>
         </field>

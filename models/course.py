@@ -12,6 +12,7 @@ class Course(models.Model):
     responsible_id = fields.Many2one('res.users', string="Responsible", ondelete='set null')
     sessions_ids = fields.One2many('openacademy.session', 'course_id')
     image = fields.Image("Image", attachment=True)
+    document_ids = fields.One2many('openacademy.document', 'course_id', string='Documents')
 
     _sql_constraints = [
         ('name_description_check',
@@ -22,3 +23,12 @@ class Course(models.Model):
          'UNIQUE(name)',
          "The course title must be unique"),
     ]
+
+class CourseDocument(models.Model):
+    _name = 'openacademy.document'
+
+    name = fields.Char(string='Filename')
+    file = fields.Binary(string=_('File'), attachment=True)
+    comment = fields.Text(string=_('Notes'))
+
+    course_id = fields.Many2one('openacademy.course')
